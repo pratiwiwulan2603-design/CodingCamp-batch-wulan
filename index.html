@@ -1,75 +1,98 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dua Slide Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Belajar</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    body {
       font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
     }
 
-    body {
-      overflow: hidden;
+    .container {
+      width: 80%;
+      margin: 40px auto;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
     }
 
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: #fff;
-      text-align: center;
-      padding: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 100;
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
     }
 
-    header button {
-      margin: 0 10px;
-      padding: 8px 15px;
-      border: 1px solid #ccc;
-      background-color: white;
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    nav button {
+      padding: 6px 12px;
+      margin: 0 4px;
+      border: 1px solid #333;
+      background: white;
       cursor: pointer;
     }
 
-    header button:hover {
-      background-color: #f0f0f0;
+    nav button:hover {
+      background: #eee;
     }
 
-    .slider {
-      display: flex;
-      width: 200%;
-      transition: transform 0.8s ease;
+    h2 {
+      margin-top: 20px;
     }
 
-    .slide {
-      width: 100%;
-      height: 100vh;
-      overflow-y: auto;
-      padding: 80px 50px 50px 50px;
-    }
-
-    /* Slide 1 - Form Belajar */
     .form-section {
-      background-color: #fafafa;
-    }
-
-    .form-box {
       display: flex;
       justify-content: space-between;
-      border: 1px solid #ccc;
-      background: #fff;
-      padding: 20px;
-      border-radius: 6px;
-      width: 90%;
-      margin: 0 auto;
+      margin-top: 20px;
+      gap: 30px;
     }
 
     form {
       width: 45%;
+    }
+
+    label {
+      display: inline-block;
+      width: 100px;
+      margin-bottom: 10px;
+      vertical-align: top;
+    }
+
+    input[type="text"], 
+    input[type="date"], 
+    textarea {
+      width: 70%;
+      padding: 5px;
+      border: 1px solid #aaa;
+      border-radius: 3px;
+    }
+
+    textarea {
+      height: 80px;
+    }
+
+    input[type="radio"] {
+      margin-left: 5px;
+      margin-right: 3px;
+    }
+
+    input[type="submit"] {
+      display: block;
+      margin-top: 15px;
+      padding: 8px 20px;
+      border: 1px solid #333;
+      background-color: white;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #eee;
     }
 
     table {
@@ -77,176 +100,158 @@
       border-collapse: collapse;
     }
 
-    table, th, td {
-      border: 1px solid #999;
-    }
-
     th, td {
+      border: 1px solid #aaa;
       padding: 8px;
-      text-align: left;
-    }
-
-    /* Slide 2 - Travel Page */
-    .travel-section {
-      background-color: #f6f8fb;
       text-align: center;
     }
 
-    .hero {
-      margin-top: 60px;
+    th {
+      background-color: #f2f2f2;
     }
 
-    .package {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin-top: 40px;
+    a {
+      color: blue;
+      text-decoration: none;
     }
 
-    .package-item {
-      width: 200px;
-      background: white;
-      border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    a:hover {
+      text-decoration: underline;
     }
 
-    .cta {
-      margin-top: 50px;
-    }
-
-    .cta button {
-      padding: 10px 20px;
-      background: black;
-      color: white;
-      border: none;
-      border-radius: 5px;
+    .delete-btn {
       cursor: pointer;
-    }
-
-    .cta button:hover {
-      background: #333;
+      color: red;
+      border: none;
+      background: none;
+      font-size: 18px;
     }
 
     footer {
-      margin-top: 30px;
+      text-align: center;
+      border-top: 1px solid #ccc;
+      margin-top: 20px;
+      padding-top: 10px;
       font-size: 13px;
-      color: #555;
     }
   </style>
 </head>
 <body>
-  <header>
-    <button onclick="showSlide(0)">Form Belajar</button>
-    <button onclick="showSlide(1)">Travel Page</button>
-  </header>
+  <div class="container">
+    <header>
+      <h3>MyWebsite</h3>
+      <nav>
+        <button>Home</button>
+        <button>My Profile</button>
+        <button>Portfolio</button>
+        <button>Message Us</button>
+      </nav>
+    </header>
 
-  <div class="slider" id="slider">
-    <!-- SLIDE 1 -->
-    <section class="slide form-section">
+    <section>
       <h2>Form Belajar</h2>
       <p>Ini adalah website latihan pertama</p>
-      <br />
-      <div class="form-box">
-        <form>
-          <label>Nama:</label><br />
-          <input type="text" placeholder="Nama"><br /><br />
 
-          <label>Tanggal Lahir:</label><br />
-          <input type="date"><br /><br />
-
-          <label>Jenis Kelamin:</label><br />
-          <input type="radio" name="jk"> Laki-Laki
-          <input type="radio" name="jk"> Perempuan<br /><br />
-
-          <label>Pesan:</label><br />
-          <textarea rows="4" cols="40" placeholder="Pesan"></textarea><br /><br />
-
-          <button type="submit">Submit</button>
+      <div class="form-section">
+        <!-- Form -->
+        <form id="dataForm">
+          <div>
+            <label>Nama :</label>
+            <input type="text" id="nama" placeholder="Nama" required>
+          </div>
+          <div>
+            <label>Tanggal Lahir :</label>
+            <input type="date" id="tanggal" required>
+          </div>
+          <div>
+            <label>Jenis Kelamin :</label>
+            <input type="radio" name="gender" value="Laki-Laki" required>Laki-Laki
+            <input type="radio" name="gender" value="Perempuan">Perempuan
+          </div>
+          <div>
+            <label>Pesan :</label>
+            <textarea id="pesan" placeholder="Pesan" required></textarea>
+          </div>
+          <input type="submit" value="Submit">
         </form>
 
-        <table>
-          <tr>
-            <th>Nama</th>
-            <th>Tanggal Lahir</th>
-            <th>Jenis Kelamin</th>
-            <th>Pesan</th>
-            <th>Profile</th>
-            <th>Delete</th>
-          </tr>
-          <tr>
-            <td>Ada Lovelace</td>
-            <td>December 10, 1815</td>
-            <td>Perempuan</td>
-            <td>Belajar Buat Website</td>
-            <td><a href="#">Klik Disini</a></td>
-            <td>🗑️</td>
-          </tr>
-          <tr>
-            <td>Grace Hopper</td>
-            <td>December 9, 1906</td>
-            <td>Perempuan</td>
-            <td>Hello World</td>
-            <td><a href="#">Klik Disini</a></td>
-            <td>🗑️</td>
-          </tr>
+        <!-- Tabel -->
+        <table id="dataTable">
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>Tanggal Lahir</th>
+              <th>Jenis Kelamin</th>
+              <th>Pesan</th>
+              <th>Profile</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ada Lovelace</td>
+              <td>December 10, 1815</td>
+              <td>Perempuan</td>
+              <td>Belajar Buat Website</td>
+              <td><a href="#">Klik Disini</a></td>
+              <td><button class="delete-btn">🗑️</button></td>
+            </tr>
+            <tr>
+              <td>Grace Hopper</td>
+              <td>December 9, 1906</td>
+              <td>Perempuan</td>
+              <td>Hello World</td>
+              <td><a href="#">Klik Disini</a></td>
+              <td><button class="delete-btn">🗑️</button></td>
+            </tr>
+          </tbody>
         </table>
       </div>
-      <footer>Created By RevoU</footer>
     </section>
 
-    <!-- SLIDE 2 -->
-    <section class="slide travel-section">
-      <div class="hero">
-        <h1>Your Trusted Travel Agent's</h1>
-        <p>Your happiness is our happiness</p>
-      </div>
-
-      <div class="package">
-        <div class="package-item">
-          <h3>Bali</h3>
-          <p>Travel dan wisata di Bali.</p>
-        </div>
-        <div class="package-item">
-          <h3>Japan</h3>
-          <p>Travel dan wisata di Jepang.</p>
-        </div>
-        <div class="package-item">
-          <h3>Singapore</h3>
-          <p>Travel dan wisata di Singapura.</p>
-        </div>
-        <div class="package-item">
-          <h3>Bandung</h3>
-          <p>Wisata kuliner dan budaya.</p>
-        </div>
-        <div class="package-item">
-          <h3>Surabaya</h3>
-          <p>Kota Pahlawan penuh sejarah.</p>
-        </div>
-      </div>
-
-      <div class="cta">
-        <h2>Your Closing Argument Headline</h2>
-        <p>Hubungi kami untuk penawaran menarik!</p>
-        <button>Call To Action</button>
-      </div>
-
-      <footer>
-        <p>Terms of Service | Privacy Policy</p>
-        <p>© 2025 Moqups</p>
-      </footer>
-    </section>
+    <footer>
+      Created By RevoU
+    </footer>
   </div>
 
   <script>
-    let currentSlide = 0;
-    const slider = document.getElementById("slider");
+    const form = document.getElementById("dataForm");
+    const table = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
 
-    function showSlide(index) {
-      currentSlide = index;
-      slider.style.transform = `translateX(-${index * 100}%)`;
-    }
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const nama = document.getElementById("nama").value;
+      const tanggal = document.getElementById("tanggal").value;
+      const gender = document.querySelector('input[name="gender"]:checked').value;
+      const pesan = document.getElementById("pesan").value;
+
+      // Tambah baris baru ke tabel
+      const newRow = table.insertRow();
+      newRow.innerHTML = `
+        <td>${nama}</td>
+        <td>${new Date(tanggal).toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' })}</td>
+        <td>${gender}</td>
+        <td>${pesan}</td>
+        <td><a href="#">Klik Disini</a></td>
+        <td><button class="delete-btn">🗑️</button></td>
+      `;
+
+      // Reset form
+      form.reset();
+
+      // Tambahkan event hapus ke tombol delete
+      newRow.querySelector(".delete-btn").addEventListener("click", function() {
+        newRow.remove();
+      });
+    });
+
+    // Fungsi hapus untuk data awal
+    document.querySelectorAll(".delete-btn").forEach(btn => {
+      btn.addEventListener("click", function() {
+        this.closest("tr").remove();
+      });
+    });
   </script>
 </body>
 </html>
