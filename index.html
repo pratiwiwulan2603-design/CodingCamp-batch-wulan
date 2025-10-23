@@ -1,15 +1,257 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Belajar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    .container {
+      width: 80%;
+      margin: 40px auto;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+    }
+
+    header {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    nav button {
+      padding: 6px 12px;
+      margin: 0 4px;
+      border: 1px solid #333;
+      background: white;
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      background: #eee;
+    }
+
+    h2 {
+      margin-top: 20px;
+    }
+
+    .form-section {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      gap: 30px;
+    }
+
+    form {
+      width: 45%;
+    }
+
+    label {
+      display: inline-block;
+      width: 100px;
+      margin-bottom: 10px;
+      vertical-align: top;
+    }
+
+    input[type="text"], 
+    input[type="date"], 
+    textarea {
+      width: 70%;
+      padding: 5px;
+      border: 1px solid #aaa;
+      border-radius: 3px;
+    }
+
+    textarea {
+      height: 80px;
+    }
+
+    input[type="radio"] {
+      margin-left: 5px;
+      margin-right: 3px;
+    }
+
+    input[type="submit"] {
+      display: block;
+      margin-top: 15px;
+      padding: 8px 20px;
+      border: 1px solid #333;
+      background-color: white;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #eee;
+    }
+
+    table {
+      width: 50%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #aaa;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .delete-btn {
+      cursor: pointer;
+      color: red;
+      border: none;
+      background: none;
+      font-size: 18px;
+    }
+
+    footer {
+      text-align: center;
+      border-top: 1px solid #ccc;
+      margin-top: 20px;
+      padding-top: 10px;
+      font-size: 13px;
+    }
+  </style>
 </head>
-
 <body>
-    <h1>Hello, World!</h1>
-    <p>This is a sample HTML document.</p>
-</body>
+  <div class="container">
+    <header>
+      <h3>MyWebsite</h3>
+      <nav>
+        <button>Home</button>
+        <button>My Profile</button>
+        <button>Portfolio</button>
+        <button>Message Us</button>
+      </nav>
+    </header>
 
+    <section>
+      <h2>Form Belajar</h2>
+      <p>Ini adalah website latihan pertama</p>
+
+      <div class="form-section">
+        <!-- Form -->
+        <form id="dataForm">
+          <div>
+            <label>Nama :</label>
+            <input type="text" id="nama" placeholder="Nama" required>
+          </div>
+          <div>
+            <label>Tanggal Lahir :</label>
+            <input type="date" id="tanggal" required>
+          </div>
+          <div>
+            <label>Jenis Kelamin :</label>
+            <input type="radio" name="gender" value="Laki-Laki" required>Laki-Laki
+            <input type="radio" name="gender" value="Perempuan">Perempuan
+          </div>
+          <div>
+            <label>Pesan :</label>
+            <textarea id="pesan" placeholder="Pesan" required></textarea>
+          </div>
+          <input type="submit" value="Submit">
+        </form>
+
+        <!-- Tabel -->
+        <table id="dataTable">
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>Tanggal Lahir</th>
+              <th>Jenis Kelamin</th>
+              <th>Pesan</th>
+              <th>Profile</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ada Lovelace</td>
+              <td>December 10, 1815</td>
+              <td>Perempuan</td>
+              <td>Belajar Buat Website</td>
+              <td><a href="#">Klik Disini</a></td>
+              <td><button class="delete-btn">🗑️</button></td>
+            </tr>
+            <tr>
+              <td>Grace Hopper</td>
+              <td>December 9, 1906</td>
+              <td>Perempuan</td>
+              <td>Hello World</td>
+              <td><a href="#">Klik Disini</a></td>
+              <td><button class="delete-btn">🗑️</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      Created By RevoU
+    </footer>
+  </div>
+
+  <script>
+    const form = document.getElementById("dataForm");
+    const table = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const nama = document.getElementById("nama").value;
+      const tanggal = document.getElementById("tanggal").value;
+      const gender = document.querySelector('input[name="gender"]:checked').value;
+      const pesan = document.getElementById("pesan").value;
+
+      // Tambah baris baru ke tabel
+      const newRow = table.insertRow();
+      newRow.innerHTML = `
+        <td>${nama}</td>
+        <td>${new Date(tanggal).toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' })}</td>
+        <td>${gender}</td>
+        <td>${pesan}</td>
+        <td><a href="#">Klik Disini</a></td>
+        <td><button class="delete-btn">🗑️</button></td>
+      `;
+
+      // Reset form
+      form.reset();
+
+      // Tambahkan event hapus ke tombol delete
+      newRow.querySelector(".delete-btn").addEventListener("click", function() {
+        newRow.remove();
+      });
+    });
+
+    // Fungsi hapus untuk data awal
+    document.querySelectorAll(".delete-btn").forEach(btn => {
+      btn.addEventListener("click", function() {
+        this.closest("tr").remove();
+      });
+    });
+  </script>
+</body>
 </html>
