@@ -1,0 +1,13 @@
+.slider {
+  display: flex;
+  transition: transform 0.6s ease;
+  width: 400%;
+}
+
+.slide {
+  width: 100%;
+  min-height: 100vh;
+  flex-shrink: 0;
+  background-color: #fff;
+  box-sizing: border-box;
+}

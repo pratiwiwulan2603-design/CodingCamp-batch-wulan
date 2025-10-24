@@ -1,257 +1,208 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Form Belajar</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f9f9f9;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wulan Portfolio</title>
 
-    .container {
-      width: 80%;
-      margin: 40px auto;
-      background: white;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      padding: 20px;
-    }
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    header {
-      border-bottom: 1px solid #ccc;
-      padding: 10px 0;
-    }
-
-    nav {
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    nav button {
-      padding: 6px 12px;
-      margin: 0 4px;
-      border: 1px solid #333;
-      background: white;
-      cursor: pointer;
-    }
-
-    nav button:hover {
-      background: #eee;
-    }
-
-    h2 {
-      margin-top: 20px;
-    }
-
-    .form-section {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-      gap: 30px;
-    }
-
-    form {
-      width: 45%;
-    }
-
-    label {
-      display: inline-block;
-      width: 100px;
-      margin-bottom: 10px;
-      vertical-align: top;
-    }
-
-    input[type="text"], 
-    input[type="date"], 
-    textarea {
-      width: 70%;
-      padding: 5px;
-      border: 1px solid #aaa;
-      border-radius: 3px;
-    }
-
-    textarea {
-      height: 80px;
-    }
-
-    input[type="radio"] {
-      margin-left: 5px;
-      margin-right: 3px;
-    }
-
-    input[type="submit"] {
-      display: block;
-      margin-top: 15px;
-      padding: 8px 20px;
-      border: 1px solid #333;
-      background-color: white;
-      cursor: pointer;
-    }
-
-    input[type="submit"]:hover {
-      background-color: #eee;
-    }
-
-    table {
-      width: 50%;
-      border-collapse: collapse;
-    }
-
-    th, td {
-      border: 1px solid #aaa;
-      padding: 8px;
-      text-align: center;
-    }
-
-    th {
-      background-color: #f2f2f2;
-    }
-
-    a {
-      color: blue;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .delete-btn {
-      cursor: pointer;
-      color: red;
-      border: none;
-      background: none;
-      font-size: 18px;
-    }
-
-    footer {
-      text-align: center;
-      border-top: 1px solid #ccc;
-      margin-top: 20px;
-      padding-top: 10px;
-      font-size: 13px;
-    }
-  </style>
+  <!-- CSS eksternal -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
-  <div class="container">
-    <header>
-      <h3>MyWebsite</h3>
-      <nav>
-        <button>Home</button>
-        <button>My Profile</button>
-        <button>Portfolio</button>
-        <button>Message Us</button>
-      </nav>
-    </header>
 
-    <section>
-      <h2>Form Belajar</h2>
-      <p>Ini adalah website latihan pertama</p>
+<body class="bg-gray-50 text-gray-800">
 
-      <div class="form-section">
-        <!-- Form -->
-        <form id="dataForm">
-          <div>
-            <label>Nama :</label>
-            <input type="text" id="nama" placeholder="Nama" required>
+  <!-- Navigasi -->
+  <nav class="flex justify-between items-center px-6 py-3 bg-white shadow-md fixed w-full top-0 z-50">
+    <h2 class="text-xl font-bold">Wulan Portfolio</h2>
+    <div>
+      <button id="btnPrev" class="bg-gray-700 text-white px-4 py-2 rounded mr-2 hover:bg-gray-800">← Back</button>
+      <button id="btnNext" class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800">Next →</button>
+    </div>
+  </nav>
+
+  <!-- SLIDER -->
+  <div class="slider mt-[80px]">
+
+    <!-- SLIDE 1: FORM BELAJAR -->
+    <section class="slide active">
+      <div class="text-center p-10">
+        <h2 class="text-3xl font-bold mb-4">Form Belajar</h2>
+        <p>Website latihan pertama</p>
+
+        <form id="formBelajar" class="max-w-lg mx-auto text-left mt-6 bg-white shadow-md p-6 rounded-xl">
+          <label>Nama:</label>
+          <input type="text" id="nama" class="border w-full p-2 mb-3" required>
+
+          <label>Tanggal Lahir:</label>
+          <input type="date" id="tanggal" class="border w-full p-2 mb-3" required>
+
+          <label>Jenis Kelamin:</label>
+          <div class="flex gap-4 mb-3">
+            <label><input type="radio" name="gender" value="Laki-Laki" required> Laki-Laki</label>
+            <label><input type="radio" name="gender" value="Perempuan" required> Perempuan</label>
           </div>
-          <div>
-            <label>Tanggal Lahir :</label>
-            <input type="date" id="tanggal" required>
-          </div>
-          <div>
-            <label>Jenis Kelamin :</label>
-            <input type="radio" name="gender" value="Laki-Laki" required>Laki-Laki
-            <input type="radio" name="gender" value="Perempuan">Perempuan
-          </div>
-          <div>
-            <label>Pesan :</label>
-            <textarea id="pesan" placeholder="Pesan" required></textarea>
-          </div>
-          <input type="submit" value="Submit">
+
+          <label>Pesan:</label>
+          <textarea id="pesan" class="border w-full p-2 mb-3"></textarea>
+
+          <button type="submit" class="bg-gray-700 text-white px-4 py-2 rounded">Submit</button>
         </form>
 
-        <!-- Tabel -->
-        <table id="dataTable">
-          <thead>
+        <table id="dataTable" class="w-3/4 mx-auto mt-6 border-collapse border text-sm">
+          <thead class="bg-gray-100">
             <tr>
-              <th>Nama</th>
-              <th>Tanggal Lahir</th>
-              <th>Jenis Kelamin</th>
-              <th>Pesan</th>
-              <th>Profile</th>
-              <th>Delete</th>
+              <th class="border p-2">Nama</th>
+              <th class="border p-2">Tanggal Lahir</th>
+              <th class="border p-2">Jenis Kelamin</th>
+              <th class="border p-2">Pesan</th>
+              <th class="border p-2">Delete</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Ada Lovelace</td>
-              <td>December 10, 1815</td>
-              <td>Perempuan</td>
-              <td>Belajar Buat Website</td>
-              <td><a href="#">Klik Disini</a></td>
-              <td><button class="delete-btn">🗑️</button></td>
-            </tr>
-            <tr>
-              <td>Grace Hopper</td>
-              <td>December 9, 1906</td>
-              <td>Perempuan</td>
-              <td>Hello World</td>
-              <td><a href="#">Klik Disini</a></td>
-              <td><button class="delete-btn">🗑️</button></td>
+              <td class="border p-2">Ada Lovelace</td>
+              <td class="border p-2">December 10, 1815</td>
+              <td class="border p-2">Perempuan</td>
+              <td class="border p-2">Belajar Buat Website</td>
+              <td class="border p-2"><button class="delete-btn">🗑️</button></td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <footer>
-      Created By RevoU
-    </footer>
+    <!-- SLIDE 2: E-GROCERIES -->
+    <section class="slide">
+      <div class="p-10">
+        <h2 class="text-3xl font-bold text-center mb-6">Top Rated E-Groceries Shop in Indonesia</h2>
+        <p class="text-center mb-8">Every day with the best ingredients</p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="text-center">
+            <div class="border-2 border-dashed h-[250px] flex items-center justify-center text-5xl mb-3">🖼️</div>
+            <p><em>"Setiap hari beli sayur buah yang fresh disini"</em></p>
+            <div class="flex items-center justify-center gap-2 mt-3">
+              <img src="https://via.placeholder.com/40" class="rounded-full" />
+              <div>
+                <p><strong>Florence Hughes</strong></p>
+                <small>Ibu Rumah Tangga, 28</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 p-6 rounded-xl">
+            <h3 class="text-xl font-semibold mb-3">Contact Us</h3>
+            <p>Sales akan menghubungi anda 1x24 jam setelah data kami terima.</p>
+
+            <form id="contactForm" class="mt-4 space-y-3">
+              <div>
+                <label>Nama:</label>
+                <input type="text" id="contactName" class="border w-full p-2" required>
+              </div>
+              <div>
+                <label>Email:</label>
+                <input type="email" id="contactEmail" class="border w-full p-2" required>
+              </div>
+              <div>
+                <label>Interest:</label>
+                <select id="interest" class="border w-full p-2" required>
+                  <option value="">Pilih</option>
+                  <option value="Fresh Vegetable">Fresh Vegetable</option>
+                  <option value="Fresh Fruit">Fresh Fruit</option>
+                  <option value="Kitchen Set">Kitchen Set</option>
+                  <option value="Instant Delivery">Instant Delivery</option>
+                </select>
+              </div>
+              <button type="submit" class="bg-gray-700 text-white px-4 py-2 rounded">SEND</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="mt-10 text-center">
+          <h3 class="text-2xl font-bold mb-4">Our Package</h3>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="p-4 border rounded-lg shadow">Fresh Vegetable</div>
+            <div class="p-4 border rounded-lg shadow">Fresh Fruit</div>
+            <div class="p-4 border rounded-lg shadow">Kitchen Ingredient</div>
+            <div class="p-4 border rounded-lg shadow">Kitchen Set</div>
+            <div class="p-4 border rounded-lg shadow">Instant Delivery</div>
+            <div class="p-4 border rounded-lg shadow">Bundling Set</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: HOME & HEADQUARTERS -->
+    <section class="slide">
+      <div class="p-10">
+        <header class="mb-6">
+          <nav class="flex flex-wrap gap-3 justify-center">
+            <a href="#home" class="border rounded p-2">Home</a>
+            <a href="#our-profile" class="border rounded p-2">Our Profile</a>
+            <a href="#portfolio" class="border rounded p-2">Portfolio</a>
+            <a href="#message-us" class="border rounded p-2">Message Us</a>
+          </nav>
+        </header>
+
+        <section id="home" class="text-center mt-6">
+          <h1 class="text-3xl font-bold mb-3">Hi Wulan, Welcome To Website</h1>
+          <p>Ini adalah website latihan pertama.</p>
+        </section>
+
+        <hr class="my-6" />
+
+        <section id="headquarters" class="text-center">
+          <h2 class="text-2xl font-bold mb-4">Our Headquarters</h2>
+          <div class="flex justify-center gap-10">
+            <div><div class="w-10 h-10 bg-gray-400 rounded-full mx-auto"></div><p>Jakarta</p></div>
+            <div><div class="w-10 h-10 bg-gray-400 rounded-full mx-auto"></div><p>Bandung</p></div>
+            <div><div class="w-10 h-10 bg-gray-400 rounded-full mx-auto"></div><p>Surabaya</p></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: MESSAGE US -->
+    <section class="slide">
+      <div class="p-10">
+        <h2 class="text-2xl font-bold mb-4">Message Us</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <form id="messageForm" class="bg-white p-6 rounded-xl shadow">
+            <label>Nama :</label>
+            <input type="text" id="msgNama" class="border w-full p-2 mb-3" required>
+
+            <label>Tanggal Lahir :</label>
+            <input type="date" id="msgTanggal" class="border w-full p-2 mb-3" required>
+
+            <label>Jenis Kelamin :</label>
+            <div class="flex gap-4 mb-3">
+              <label><input type="radio" name="msgGender" value="Laki-Laki" checked> Laki-Laki</label>
+              <label><input type="radio" name="msgGender" value="Perempuan"> Perempuan</label>
+            </div>
+
+            <label>Pesan :</label>
+            <textarea id="msgPesan" class="border w-full p-2 mb-3" required></textarea>
+
+            <button type="submit" class="bg-gray-700 text-white px-4 py-2 rounded">Submit</button>
+          </form>
+
+          <div class="bg-gray-100 p-6 rounded-xl shadow">
+            <p><b>Current Time:</b> <span id="currentTime"></span></p>
+            <p><b>Nama:</b> <span id="outNama">-</span></p>
+            <p><b>Tanggal Lahir:</b> <span id="outTanggal">-</span></p>
+            <p><b>Jenis Kelamin:</b> <span id="outGender">-</span></p>
+            <p><b>Pesan:</b> <span id="outPesan">-</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
-  <script>
-    const form = document.getElementById("dataForm");
-    const table = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
+  <footer class="text-center py-4 bg-white border-t">Created by Wulan Pratiwi | RevoU Project</footer>
 
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const nama = document.getElementById("nama").value;
-      const tanggal = document.getElementById("tanggal").value;
-      const gender = document.querySelector('input[name="gender"]:checked').value;
-      const pesan = document.getElementById("pesan").value;
-
-      // Tambah baris baru ke tabel
-      const newRow = table.insertRow();
-      newRow.innerHTML = `
-        <td>${nama}</td>
-        <td>${new Date(tanggal).toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' })}</td>
-        <td>${gender}</td>
-        <td>${pesan}</td>
-        <td><a href="#">Klik Disini</a></td>
-        <td><button class="delete-btn">🗑️</button></td>
-      `;
-
-      // Reset form
-      form.reset();
-
-      // Tambahkan event hapus ke tombol delete
-      newRow.querySelector(".delete-btn").addEventListener("click", function() {
-        newRow.remove();
-      });
-    });
-
-    // Fungsi hapus untuk data awal
-    document.querySelectorAll(".delete-btn").forEach(btn => {
-      btn.addEventListener("click", function() {
-        this.closest("tr").remove();
-      });
-    });
-  </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
