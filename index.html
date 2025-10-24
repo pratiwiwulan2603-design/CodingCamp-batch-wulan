@@ -1,165 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Korsel 5 Slide</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="form.html">Form</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="contact.html">Message Us</a>
-        </nav>
-    </header>
-    <main>
-        <h1>Form Belajar</h1>
-        <form id="userForm">
-            <label for="name">Nama:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="dob">Tanggal Lahir:</label>
-            <input type="date" id="dob" name="dob" required>
-            
-            <label>Jenis Kelamin:</label>
-            <input type="radio" id="male" name="gender" value="Laki-Laki" required>
-            <label for="male">Laki-Laki</label>
-            <input type="radio" id="female" name="gender" value="Perempuan" required>
-            <label for="female">Perempuan</label>
-            
-            <label for="message">Pesan:</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button type="submit">Submit</button>
-        </form>
 
-        <h2>Previous Entries</h2>
-        <table>
-            <tr>
-                <th>Nama</th>
-                <th>Tanggal Lahir</th>
-                <th>Jenis Kelamin</th>
-                <th>Pesan</th>
-                <th>Profile</th>
-                <th>Delete</th>
-            </tr>
-            <!-- Entries will appear here -->
-        </table>
-    </main>
-    <footer>
-        <p>Created By RevoU</p>
-    </footer>
-    <script src="script.js"></script>
-</body>
-</html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Page</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="travel.html">Travel</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="contact.html">Message Us</a>
-        </nav>
-    </header>
-    <main>
-        <h1>Top Rated E-Groceries Shop in Indonesia</h1>
-        <p>Every day with the best ingredients</p>
-
-        <form action="#" method="post">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name">
-            
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email">
-            
-            <label for="location">Location</label>
-            <select id="location" name="location">
-                <option value="jakarta">Jakarta</option>
-                <option value="bandung">Bandung</option>
-                <option value="surabaya">Surabaya</option>
-            </select>
-            
-            <button type="submit">Send</button>
-        </form>
-
-        <section>
-            <h2>Our Package</h2>
-            <div>
-                <div>Fresh Vegetables</div>
-                <div>Fresh Fruits</div>
-                <div>Instant Delivery</div>
-                <div>Kitchen Ingredients</div>
+    <div class="carousel-container">
+        <div class="carousel-wrapper">
+            <div class="slide slide-1">
+                <h2>Slide Pertama</h2>
+                <p>Konten untuk slide nomor 1.</p>
             </div>
-        </section>
-    </main>
-    <footer>
-        <p>Created By RevoU</p>
-    </footer>
-</body>
-</html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="form.html">Form</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="contact.html">Message Us</a>
-        </nav>
-    </header>
-    <main>
-        <h1>Hi, Harfi, Welcome to Website</h1>
-        <p>Our Website for Learning Purposes</p>
+            <div class="slide slide-2">
+                <h2>Slide Kedua</h2>
+                <p>Konten untuk slide nomor 2.</p>
+            </div>
+            <div class="slide slide-3">
+                <h2>Slide Ketiga</h2>
+                <p>Konten untuk slide nomor 3.</p>
+            </div>
+            <div class="slide slide-4">
+                <h2>Slide Keempat</h2>
+                <p>Konten untuk slide nomor 4.</p>
+            </div>
+            <div class="slide slide-5">
+                <h2>Slide Kelima</h2>
+                <p>Konten untuk slide nomor 5.</p>
+            </div>
+        </div>
         
-        <section>
-            <h2>Our Headquarter</h2>
-            <div>
-                <div>Jakarta</div>
-                <div>Bandung</div>
-                <div>Surabaya</div>
-            </div>
-        </section>
+        <button class="prev-button" onclick="prevSlide()">&#10094; Sebelumnya</button>
+        <button class="next-button" onclick="nextSlide()">Berikutnya &#10095;</button>
 
-        <section>
-            <h2>Message Us</h2>
-            <form action="#">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name">
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-                
-                <label for="gender">Gender:</label>
-                <input type="radio" id="male" name="gender" value="Laki-Laki">
-                <label for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="Perempuan">
-                <label for="female">Female</label>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message"></textarea>
-                
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>Created By RevoU</p>
-    </footer>
+        <div class="dots-container">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+            <span class="dot" onclick="goToSlide(3)"></span>
+            <span class="dot" onclick="goToSlide(4)"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
