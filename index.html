@@ -1,271 +1,165 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wulan Portfolio</title>
-
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- CSS eksternal -->
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
-<body class="bg-gray-50 text-gray-800">
-
-  <!-- Navigasi -->
-  <nav class="flex justify-between items-center px-6 py-3 bg-white shadow-md fixed w-full top-0 z-50">
-    <h2 class="text-xl font-bold">Wulan Portfolio</h2>
-    <div>
-      <button id="btnPrev" class="bg-gray-700 text-white px-4 py-2 rounded mr-2 hover:bg-gray-800">← Back</button>
-      <button id="btnNext" class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800">Next →</button>
-    </div>
-  </nav>
-
-  <!-- SLIDER -->
-  <div class="slider mt-[80px]">
-
-    <!-- SLIDE 1: FORM BELAJAR -->
-     <section class="form-section">
-      <h3>Form Belajar</h3>
-      <p>Ini adalah website latihan pertama</p>
-
-      <form id="formBelajar">
-        <div class="form-group">
-          <label>Nama :</label>
-          <input type="text" id="nama" placeholder="Nama" required>
-        </div>
-
-        <div class="form-group">
-          <label>Tanggal Lahir :</label>
-          <input type="date" id="tanggal" required>
-        </div>
-
-        <div class="form-group">
-          <label>Jenis Kelamin :</label>
-          <label><input type="radio" name="gender" value="Laki-Laki" required> Laki-Laki</label>
-          <label><input type="radio" name="gender" value="Perempuan" required> Perempuan</label>
-        </div>
-
-        <div class="form-group">
-          <label>Pesan :</label>
-          <textarea id="pesan" placeholder="Pesan"></textarea>
-        </div>
-
-        <button type="submit">Submit</button>
-      </form>
-    </section>
-
-    <section class="table-section">
-      <table id="dataTable">
-        <thead>
-          <tr>
-            <th>Nama</th>
-            <th>Tanggal Lahir</th>
-            <th>Jenis Kelamin</th>
-            <th>Pesan</th>
-            <th>Profile</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Ada Lovelace</td>
-            <td>December 10, 1815</td>
-            <td>Perempuan</td>
-            <td>Belajar Buat Website</td>
-            <td><a href="#">Klik Disini</a></td>
-            <td><button class="delete-btn">🗑️</button></td>
-          </tr>
-          <tr>
-            <td>Grace Hopper</td>
-            <td>December 9, 1906</td>
-            <td>Perempuan</td>
-            <td>Hello World</td>
-            <td><a href="#">Klik Disini</a></td>
-            <td><button class="delete-btn">🗑️</button></td>
-          </tr>
-          <tr>
-            <td>Margaret Hamilton</td>
-            <td>August 17, 1936</td>
-            <td>Perempuan</td>
-            <td>Test Dulu</td>
-            <td><a href="#">Klik Disini</a></td>
-            <td><button class="delete-btn">🗑️</button></td>
-          </tr>
-          <tr>
-            <td>Joan Clarke</td>
-            <td>June 24, 1917</td>
-            <td>Laki-Laki</td>
-            <td>Selalu Semangat</td>
-            <td><a href="#">Klik Disini</a></td>
-            <td><button class="delete-btn">🗑️</button></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
-
-  <footer>
-    <p>Created by RevoU</p>
-  </footer>
-
-    <!-- SLIDE 2: E-GROCERIES -->
-     <section class="hero">
-      <div class="image-section">
-        <div class="image-placeholder">
-          <span>🖼️</span>
-        </div>
-        <p class="quote"><em>"Setiap hari beli sayur buah yang fresh disini"</em></p>
-        <div class="testimonial">
-          <img src="https://via.placeholder.com/40" alt="profile" class="profile-pic">
-          <div>
-            <p><strong>Florence Hughes</strong></p>
-            <small>Ibu Rumah Tangga, 28</small>
-          </div>
-        </div>
-      </div>
-
-      <div class="contact-section">
-        <h3>Contact Us</h3>
-        <p>Sales akan menghubungi anda 1x24 jam setelah data kami terima.</p>
-
-        <form id="contactForm">
-          <label for="name">Your Name:</label>
-          <input type="text" id="name" placeholder="First and last name" required>
-
-          <label for="email">Email Address:</label>
-          <input type="email" id="email" placeholder="example@email.com" required>
-
-          <label for="interest">What are you interested in?</label>
-          <select id="interest" required>
-            <option value="">Select option</option>
-            <option value="Fresh Vegetable">Fresh Vegetable</option>
-            <option value="Fresh Fruit">Fresh Fruit</option>
-            <option value="Kitchen Set">Kitchen Set</option>
-            <option value="Instant Delivery">Instant Delivery</option>
-          </select>
-
-          <button type="submit">SEND</button>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="form.html">Form</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Message Us</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Form Belajar</h1>
+        <form id="userForm">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="dob">Tanggal Lahir:</label>
+            <input type="date" id="dob" name="dob" required>
+            
+            <label>Jenis Kelamin:</label>
+            <input type="radio" id="male" name="gender" value="Laki-Laki" required>
+            <label for="male">Laki-Laki</label>
+            <input type="radio" id="female" name="gender" value="Perempuan" required>
+            <label for="female">Perempuan</label>
+            
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Submit</button>
         </form>
-      </div>
-    </section>
 
-    <section class="package">
-      <h2>Our Package</h2>
-      <div class="package-grid">
-        <div class="card">
-          <h4>Fresh Vegetable</h4>
-          <p>Sayuran segar langsung dari sumber pertanian terbaik</p>
-        </div>
-        <div class="card">
-          <h4>Fresh Fruit</h4>
-          <p>Buah dengan kualitas terbaik dari lokal atau impor dengan harga menarik</p>
-        </div>
-        <div class="card">
-          <h4>Instant Delivery</h4>
-          <p>Dikirim instan oleh kurir yang telah di-training menjaga kondisi belanja kamu</p>
-        </div>
-        <div class="card">
-          <h4>Kitchen Ingredient</h4>
-          <p>Bumbu dapur lengkap untuk keperluan memasak kamu</p>
-        </div>
-        <div class="card">
-          <h4>Kitchen Set</h4>
-          <p>Segala jenis alat masak untuk membantu kamu memasak</p>
-        </div>
-        <div class="card">
-          <h4>Bunding Set</h4>
-          <p>Bingung masak apa? Sudah tersedia paket untuk kamu masak di dapurmu</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="closing">
-      <h2>Your Closing Argument Headline</h2>
-      <p>Suspense egestas rhoncus urna in bibendum. Donec urna neque, euismod sed justo quis, convallis tincidunt risus.</p>
-      <button class="cta">CALL TO ACTION</button>
-    </section>
-  </main>
-
-  <footer>
-    <p>Terms of Service | Privacy Policy</p>
-    <p>&copy; 2019 Moqups</p>
-  </footer>
-
-  <script src="script.js"></script>
+        <h2>Previous Entries</h2>
+        <table>
+            <tr>
+                <th>Nama</th>
+                <th>Tanggal Lahir</th>
+                <th>Jenis Kelamin</th>
+                <th>Pesan</th>
+                <th>Profile</th>
+                <th>Delete</th>
+            </tr>
+            <!-- Entries will appear here -->
+        </table>
+    </main>
+    <footer>
+        <p>Created By RevoU</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="travel.html">Travel</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Message Us</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Top Rated E-Groceries Shop in Indonesia</h1>
+        <p>Every day with the best ingredients</p>
 
-    <!-- SLIDE 3: HOME & HEADQUARTERS -->
-    <section class="slide">
-      <div class="p-10">
-        <header class="mb-6">
-          <nav class="flex flex-wrap gap-3 justify-center">
-            <a href="#home" class="border rounded p-2">Home</a>
-            <a href="#our-profile" class="border rounded p-2">Our Profile</a>
-            <a href="#portfolio" class="border rounded p-2">Portfolio</a>
-            <a href="#message-us" class="border rounded p-2">Message Us</a>
-          </nav>
-        </header>
+        <form action="#" method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+            
+            <label for="location">Location</label>
+            <select id="location" name="location">
+                <option value="jakarta">Jakarta</option>
+                <option value="bandung">Bandung</option>
+                <option value="surabaya">Surabaya</option>
+            </select>
+            
+            <button type="submit">Send</button>
+        </form>
 
-        <section id="home" class="text-center mt-6">
-          <h1 class="text-3xl font-bold mb-3">Hi Wulan, Welcome To Website</h1>
-          <p>Ini adalah website latihan pertama.</p>
-        </section>
-
-        <hr class="my-6" />
-
-        <section id="headquarters" class="text-center">
-          <h2 class="text-2xl font-bold mb-4">Our Headquarters</h2>
-          <div class="flex justify-center gap-10">
-            <div><div class="w-10 h-10 bg-gray-400 rounded-full mx-auto"></div><p>Jakarta</p></div>
-            <div><div class="w-10 h-10 bg-gray-400 rounded-full mx-auto"></div><p>Bandung</p></div>
-            <div><div class="w-10 h-10 bg-gray-400 rounded-full mx-auto"></div><p>Surabaya</p></div>
-          </div>
-        </section>
-      </div>
-    </section>
-
-    <!-- SLIDE 4: MESSAGE US -->
-    <section class="slide">
-      <div class="p-10">
-        <h2 class="text-2xl font-bold mb-4">Message Us</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <form id="messageForm" class="bg-white p-6 rounded-xl shadow">
-            <label>Nama :</label>
-            <input type="text" id="msgNama" class="border w-full p-2 mb-3" required>
-
-            <label>Tanggal Lahir :</label>
-            <input type="date" id="msgTanggal" class="border w-full p-2 mb-3" required>
-
-            <label>Jenis Kelamin :</label>
-            <div class="flex gap-4 mb-3">
-              <label><input type="radio" name="msgGender" value="Laki-Laki" checked> Laki-Laki</label>
-              <label><input type="radio" name="msgGender" value="Perempuan"> Perempuan</label>
+        <section>
+            <h2>Our Package</h2>
+            <div>
+                <div>Fresh Vegetables</div>
+                <div>Fresh Fruits</div>
+                <div>Instant Delivery</div>
+                <div>Kitchen Ingredients</div>
             </div>
+        </section>
+    </main>
+    <footer>
+        <p>Created By RevoU</p>
+    </footer>
+</body>
+</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="form.html">Form</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Message Us</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Hi, Harfi, Welcome to Website</h1>
+        <p>Our Website for Learning Purposes</p>
+        
+        <section>
+            <h2>Our Headquarter</h2>
+            <div>
+                <div>Jakarta</div>
+                <div>Bandung</div>
+                <div>Surabaya</div>
+            </div>
+        </section>
 
-            <label>Pesan :</label>
-            <textarea id="msgPesan" class="border w-full p-2 mb-3" required></textarea>
-
-            <button type="submit" class="bg-gray-700 text-white px-4 py-2 rounded">Submit</button>
-          </form>
-
-          <div class="bg-gray-100 p-6 rounded-xl shadow">
-            <p><b>Current Time:</b> <span id="currentTime"></span></p>
-            <p><b>Nama:</b> <span id="outNama">-</span></p>
-            <p><b>Tanggal Lahir:</b> <span id="outTanggal">-</span></p>
-            <p><b>Jenis Kelamin:</b> <span id="outGender">-</span></p>
-            <p><b>Pesan:</b> <span id="outPesan">-</span></p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <footer class="text-center py-4 bg-white border-t">Created by Wulan Pratiwi | RevoU Project</footer>
-
-  <script src="js/script.js"></script>
+        <section>
+            <h2>Message Us</h2>
+            <form action="#">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                
+                <label for="gender">Gender:</label>
+                <input type="radio" id="male" name="gender" value="Laki-Laki">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Perempuan">
+                <label for="female">Female</label>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Created By RevoU</p>
+    </footer>
 </body>
 </html>
