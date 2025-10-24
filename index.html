@@ -1,49 +1,110 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Korsel 5 Slide</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Belajar</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="carousel-container">
-        <div class="carousel-wrapper">
-            <div class="slide slide-1">
-                <h2>Slide Pertama</h2>
-                <p>Konten untuk slide nomor 1.</p>
-            </div>
-            <div class="slide slide-2">
-                <h2>Slide Kedua</h2>
-                <p>Konten untuk slide nomor 2.</p>
-            </div>
-            <div class="slide slide-3">
-                <h2>Slide Ketiga</h2>
-                <p>Konten untuk slide nomor 3.</p>
-            </div>
-            <div class="slide slide-4">
-                <h2>Slide Keempat</h2>
-                <p>Konten untuk slide nomor 4.</p>
-            </div>
-            <div class="slide slide-5">
-                <h2>Slide Kelima</h2>
-                <p>Konten untuk slide nomor 5.</p>
-            </div>
-        </div>
-        
-        <button class="prev-button" onclick="prevSlide()">&#10094; Sebelumnya</button>
-        <button class="next-button" onclick="nextSlide()">Berikutnya &#10095;</button>
-
-        <div class="dots-container">
-            <span class="dot active" onclick="goToSlide(0)"></span>
-            <span class="dot" onclick="goToSlide(1)"></span>
-            <span class="dot" onclick="goToSlide(2)"></span>
-            <span class="dot" onclick="goToSlide(3)"></span>
-            <span class="dot" onclick="goToSlide(4)"></span>
-        </div>
+  <header>
+    <div class="navbar">
+      <h2>MyWebsite</h2>
+      <nav>
+        <button>Home</button>
+        <button>My Profile</button>
+        <button>Portfolio</button>
+        <button>Message Us</button>
+      </nav>
     </div>
+  </header>
 
-    <script src="script.js"></script>
+  <main>
+    <section class="form-section">
+      <h3>Form Belajar</h3>
+      <p>Ini adalah website latihan pertama</p>
+
+      <form id="formBelajar">
+        <div class="form-group">
+          <label>Nama :</label>
+          <input type="text" id="nama" placeholder="Nama" required>
+        </div>
+
+        <div class="form-group">
+          <label>Tanggal Lahir :</label>
+          <input type="date" id="tanggal" required>
+        </div>
+
+        <div class="form-group">
+          <label>Jenis Kelamin :</label>
+          <label><input type="radio" name="gender" value="Laki-Laki" required> Laki-Laki</label>
+          <label><input type="radio" name="gender" value="Perempuan" required> Perempuan</label>
+        </div>
+
+        <div class="form-group">
+          <label>Pesan :</label>
+          <textarea id="pesan" placeholder="Pesan"></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section class="table-section">
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Tanggal Lahir</th>
+            <th>Jenis Kelamin</th>
+            <th>Pesan</th>
+            <th>Profile</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ada Lovelace</td>
+            <td>December 10, 1815</td>
+            <td>Perempuan</td>
+            <td>Belajar Buat Website</td>
+            <td><a href="#">Klik Disini</a></td>
+            <td><button class="delete-btn">🗑️</button></td>
+          </tr>
+          <tr>
+            <td>Grace Hopper</td>
+            <td>December 9, 1906</td>
+            <td>Perempuan</td>
+            <td>Hello World</td>
+            <td><a href="#">Klik Disini</a></td>
+            <td><button class="delete-btn">🗑️</button></td>
+          </tr>
+          <tr>
+            <td>Margaret Hamilton</td>
+            <td>August 17, 1936</td>
+            <td>Perempuan</td>
+            <td>Test Dulu</td>
+            <td><a href="#">Klik Disini</a></td>
+            <td><button class="delete-btn">🗑️</button></td>
+          </tr>
+          <tr>
+            <td>Joan Clarke</td>
+            <td>June 24, 1917</td>
+            <td>Laki-Laki</td>
+            <td>Selalu Semangat</td>
+            <td><a href="#">Klik Disini</a></td>
+            <td><button class="delete-btn">🗑️</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>Created by RevoU</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

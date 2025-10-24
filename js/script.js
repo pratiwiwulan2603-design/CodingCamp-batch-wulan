@@ -1,63 +1,31 @@
-// Variabel untuk melacak slide yang sedang aktif
-let currentSlide = 0;
-// Jumlah total slide
-const totalSlides = 5;
-// Elemen HTML dari wrapper slide
-const carouselWrapper = document.querySelector('.carousel-wrapper');
-// Semua elemen dot navigasi
-const dots = document.querySelectorAll('.dot');
+document.getElementById("formBelajar").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-/**
- * Fungsi untuk memperbarui tampilan korsel ke slide tertentu.
- * @param {number} index - Indeks slide yang akan ditampilkan (0 sampai 4).
- */
-function updateCarousel(index) {
-    // Pastikan indeks berada dalam batas (0 hingga totalSlides - 1)
-    if (index >= totalSlides) {
-        currentSlide = 0; // Kembali ke slide pertama
-    } else if (index < 0) {
-        currentSlide = totalSlides - 1; // Pindah ke slide terakhir
-    } else {
-        currentSlide = index;
-    }
+  const nama = document.getElementById("nama").value;
+  const tanggal = document.getElementById("tanggal").value;
+  const gender = document.querySelector('input[name="gender"]:checked').value;
+  const pesan = document.getElementById("pesan").value;
 
-    // Hitung pergeseran horizontal (translateX)
-    // -0% untuk slide 1, -20% untuk slide 2, -40% untuk slide 3, dst.
-    const offset = -currentSlide * (100 / totalSlides); 
+  if (!nama || !tanggal || !gender || !pesan) {
+    alert("Harap isi semua data!");
+    return;
+  }
 
-    // Terapkan pergeseran ke carousel-wrapper
-    carouselWrapper.style.transform = `translateX(${offset}%)`;
+  const table = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
+  const row = table.insertRow();
 
-    // Perbarui status titik navigasi
-    dots.forEach((dot, i) => {
-        dot.classList.remove('active');
-        if (i === currentSlide) {
-            dot.classList.add('active');
-        }
-    });
-}
+  row.insertCell(0).innerText = nama;
+  row.insertCell(1).innerText = new Date(tanggal).toDateString();
+  row.insertCell(2).innerText = gender;
+  row.insertCell(3).innerText = pesan;
+  row.insertCell(4).innerHTML = `<a href="#">Klik Disini</a>`;
+  const delCell = row.insertCell(5);
+  delCell.innerHTML = `<button class="delete-btn">🗑️</button>`;
 
-/**
- * Pindah ke slide berikutnya (ke kanan).
- */
-function nextSlide() {
-    updateCarousel(currentSlide + 1);
-}
+  document.getElementById("formBelajar").reset();
 
-/**
- * Pindah ke slide sebelumnya (ke kiri).
- */
-function prevSlide() {
-    updateCarousel(currentSlide - 1);
-}
-
-/**
- * Pindah langsung ke slide dengan indeks tertentu (digunakan oleh dot).
- * @param {number} index - Indeks slide tujuan.
- */
-function goToSlide(index) {
-    updateCarousel(index);
-}
-
-// Inisialisasi tampilan awal
-updateCarousel(currentSlide);
+  // Tombol delete
+  delCell.querySelector(".delete-btn").addEventListener("click", function() {
+    table.deleteRow(row.rowIndex - 1);
+  });
+});
