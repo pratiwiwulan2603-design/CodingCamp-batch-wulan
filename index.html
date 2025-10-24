@@ -27,52 +27,89 @@
   <div class="slider mt-[80px]">
 
     <!-- SLIDE 1: FORM BELAJAR -->
-    <section class="slide active">
-      <div class="text-center p-10">
-        <h2 class="text-3xl font-bold mb-4">Form Belajar</h2>
-        <p>Website latihan pertama</p>
+     <section class="form-section">
+      <h3>Form Belajar</h3>
+      <p>Ini adalah website latihan pertama</p>
 
-        <form id="formBelajar" class="max-w-lg mx-auto text-left mt-6 bg-white shadow-md p-6 rounded-xl">
-          <label>Nama:</label>
-          <input type="text" id="nama" class="border w-full p-2 mb-3" required>
+      <form id="formBelajar">
+        <div class="form-group">
+          <label>Nama :</label>
+          <input type="text" id="nama" placeholder="Nama" required>
+        </div>
 
-          <label>Tanggal Lahir:</label>
-          <input type="date" id="tanggal" class="border w-full p-2 mb-3" required>
+        <div class="form-group">
+          <label>Tanggal Lahir :</label>
+          <input type="date" id="tanggal" required>
+        </div>
 
-          <label>Jenis Kelamin:</label>
-          <div class="flex gap-4 mb-3">
-            <label><input type="radio" name="gender" value="Laki-Laki" required> Laki-Laki</label>
-            <label><input type="radio" name="gender" value="Perempuan" required> Perempuan</label>
-          </div>
+        <div class="form-group">
+          <label>Jenis Kelamin :</label>
+          <label><input type="radio" name="gender" value="Laki-Laki" required> Laki-Laki</label>
+          <label><input type="radio" name="gender" value="Perempuan" required> Perempuan</label>
+        </div>
 
-          <label>Pesan:</label>
-          <textarea id="pesan" class="border w-full p-2 mb-3"></textarea>
+        <div class="form-group">
+          <label>Pesan :</label>
+          <textarea id="pesan" placeholder="Pesan"></textarea>
+        </div>
 
-          <button type="submit" class="bg-gray-700 text-white px-4 py-2 rounded">Submit</button>
-        </form>
-
-        <table id="dataTable" class="w-3/4 mx-auto mt-6 border-collapse border text-sm">
-          <thead class="bg-gray-100">
-            <tr>
-              <th class="border p-2">Nama</th>
-              <th class="border p-2">Tanggal Lahir</th>
-              <th class="border p-2">Jenis Kelamin</th>
-              <th class="border p-2">Pesan</th>
-              <th class="border p-2">Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="border p-2">Ada Lovelace</td>
-              <td class="border p-2">December 10, 1815</td>
-              <td class="border p-2">Perempuan</td>
-              <td class="border p-2">Belajar Buat Website</td>
-              <td class="border p-2"><button class="delete-btn">🗑️</button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <button type="submit">Submit</button>
+      </form>
     </section>
+
+    <section class="table-section">
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Tanggal Lahir</th>
+            <th>Jenis Kelamin</th>
+            <th>Pesan</th>
+            <th>Profile</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ada Lovelace</td>
+            <td>December 10, 1815</td>
+            <td>Perempuan</td>
+            <td>Belajar Buat Website</td>
+            <td><a href="#">Klik Disini</a></td>
+            <td><button class="delete-btn">🗑️</button></td>
+          </tr>
+          <tr>
+            <td>Grace Hopper</td>
+            <td>December 9, 1906</td>
+            <td>Perempuan</td>
+            <td>Hello World</td>
+            <td><a href="#">Klik Disini</a></td>
+            <td><button class="delete-btn">🗑️</button></td>
+          </tr>
+          <tr>
+            <td>Margaret Hamilton</td>
+            <td>August 17, 1936</td>
+            <td>Perempuan</td>
+            <td>Test Dulu</td>
+            <td><a href="#">Klik Disini</a></td>
+            <td><button class="delete-btn">🗑️</button></td>
+          </tr>
+          <tr>
+            <td>Joan Clarke</td>
+            <td>June 24, 1917</td>
+            <td>Laki-Laki</td>
+            <td>Selalu Semangat</td>
+            <td><a href="#">Klik Disini</a></td>
+            <td><button class="delete-btn">🗑️</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>Created by RevoU</p>
+  </footer>
 
     <!-- SLIDE 2: E-GROCERIES -->
     <section class="slide">
